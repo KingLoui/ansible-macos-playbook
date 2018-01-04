@@ -24,7 +24,7 @@ provider when setting up a computer from scratch.
 ### Automated
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/jeromegamez/ansible-macos-playbook/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/KingLoui/ansible-macos-playbook/master/install.sh)"
 ```
 
 ### Manual

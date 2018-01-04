@@ -10,12 +10,6 @@
     - caskroom/fonts
     - buo/cask-upgrade
 
-- name: Install FFmpeg
-  homebrew:
-    name: ffmpeg
-    state: latest
-    install_options: with-chromaprint,with-fdk-aac,with-fontconfig,with-freetype,with-libvorbis,with-openh264,with-openssl,with-opus,with-rtmpdump,with-theora,with-tools,with-two-lame,with-wavpack,with-x265
-
 - name: Install homebrew apps.
   homebrew:
     name: "{{ item }}"
@@ -26,35 +20,21 @@
   homebrew_cask:
     name: "{{ item }}"
   with_items:
-    - alfred
-    - bartender
-    - cleanmymac
-    - encryptme
     - dash
-    - fantastical
     - firefox
     - font-fira-code
     - font-roboto
     - font-roboto-condensed
     - font-roboto-mono
-    - gitup
     - google-chrome
-    - gpg-suite
     - iterm2
     - java
     - kaleidoscope
-    - mailmate
-    - paw
-    - plug
     - phpstorm
     - sequel-pro
     - slack
-    - sonos
     - spotify
     - sublime-text
-    - telegram-desktop
-    - textual
-    - transmit
     - tower
     - vlc
     - whatsapp
