@@ -1,0 +1,52 @@
+---
+
+- name: Everything's gonna be alright.
+  hosts: localhost
+  vars_files:
+    - vars/defaults.yml
+
+  pre_tasks:
+    - name: Include user configuration
+      include_vars: "{{ item }}"
+      with_first_found:
+        - files:
+          - "{{ ansible_env.USER }}.yml"
+          skip: true
+      tags: [always]
+
+  roles:
+    - name: essentials
+      tags: [essentials]
+      when: enable_essentials
+
+    - name: shell
+      tags: [shell]
+
+    - name: yadm
+      tags: [yadm]
+
+    - name: dev
+      tags: [dev]
+
+    - name: macos-settings
+      tags: [settings]
+
+    - name: settings/hostname
+      tags: [hostname]
+
+    - name: settings/safari
+      tags: [settings-safari]
+
+    - name: settings/system
+      tags: [settings-system]
+
+    - name: apps
+      tags: [apps]
+
+  tasks:
+    - name: Upgrade all homebrew packages
+      homebrew:
+        update_homebrew: yes
+        upgrade_all: yes
+      tags: [always]
+      when: upgrade_all_homebrew_packages

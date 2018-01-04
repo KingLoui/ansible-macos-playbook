@@ -1,0 +1,18 @@
+---
+
+- name: Tap dinghy in homebrew
+  homebrew_tap:
+    name: codekitchen/dinghy
+
+- name: "Install docker related tools."
+  homebrew:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - docker
+    - docker-completion
+    - docker-compose
+    - docker-credential-helper
+    - docker-machine
+    - docker-machine-driver-xhyve
+    - dinghy
