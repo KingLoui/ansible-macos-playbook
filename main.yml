@@ -1,5 +1,7 @@
 ---
 
+#echo "$MY_USER ALL=(ALL) NOPASSWD:ALL" | sudo tee --append /etc/sudoers
+
 - name: Everything's gonna be alright.
   hosts: localhost
   vars_files:
@@ -28,11 +30,8 @@
     - name: dev
       tags: [dev]
 
-    - name: macos-settings
-      tags: [settings]
-
     - name: settings/hostname
-      tags: [hostname]
+      tags: [settings-hostname]
 
     - name: settings/safari
       tags: [settings-safari]

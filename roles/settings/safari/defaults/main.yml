@@ -1,6 +1,7 @@
 ---
 
-show_full_url_in_address_bar: yes
-open_safe_files_automatically: no
-show_status_bar: yes
-show_developer_menu: yes
+safari_show_full_url_in_address_bar: yes
+safari_open_safe_files_automatically: no
+safari_enable_status_bar: yes
+safari_enable_developer_menu: yes
+safari_autofill_passwords: no

@@ -29,7 +29,6 @@
     - google-chrome
     - iterm2
     - java
-    - kaleidoscope
     - sequel-pro
     - slack
     - spotify
@@ -55,13 +54,11 @@
     mas_upgrade_all_apps: yes
 
 - include_role:
-    name: dock
-  tags: [dock]
+    name: settings/dock
+  tags: [settings-dock]
   vars:
     dock_remove_undefined: yes
     dock_apps:
-      - name: MailMate
-        path: /Applications/MailMate.app
       - name: Fantastical 2
         path: /Applications/Fantastical 2.app
       - name: Slack

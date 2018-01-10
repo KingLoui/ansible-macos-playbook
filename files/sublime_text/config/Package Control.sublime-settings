@@ -1,0 +1,34 @@
+{
+	"install_prereleases":
+	[
+		"LESS"
+	],
+	"installed_packages":
+	[
+		"SublimeLinter",
+		"SublimeLinter-php",
+		"SublimeLinter-cppcheck",
+		"Sublime​Linter-json",
+		"Sublime​Linter-phpcs",
+		"SublimeLinter-csslint",
+		"Sublime​Linter-annotations",
+
+		"SublimeCodeIntel",
+		"EasyClangComplete",
+
+		"Sass",
+		"LESS",
+
+		"Side​Bar​Enhancements",
+		"Bracket​Highlighter",
+		"Auto​File​Name",
+		"Placeholders",
+		"Dockerfile Syntax Highlighting",
+		"Color Highlighter",
+		"Emmet",
+		"Terminal",
+		"Hide Sidebar When Not Focussed",
+		"Focus File on Sidebar",
+		"A File Icon"
+	]
+}

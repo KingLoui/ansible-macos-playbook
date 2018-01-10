@@ -1,8 +1,36 @@
 ---
 
-save_application_state_on_quit: no
-expand_save_panel_by_default: yes
-expand_print_panel_by_default: yes
-show_file_extensions_warning: no
-warn_before_emptying_the_trash: yes
+system_disable_dashboard: yes
+system_enable_auto_correct: no
+system_enable_smart_quotes: no
+system_enable_smart_dashes: no
+system_enable_automatic_capitalization: no
+system_save_application_state_on_quit: yes
+system_expand_save_panel_by_default: yes
+system_expand_print_panel_by_default: yes
+system_enable_springloading_directories: yes
+system_springloading_directories_delay: 0
+system_disable_dsstore_on_network_shares: yes
+system_disable_dsstore_on_usb_drives: yes
+system_disable_disk_image_verification: yes
 
+finder_show_file_extensions_warning: no
+finder_warn_before_emptying_the_trash: no
+finder_show_all_files: 
+finder_keep_folders_on_top: 
+finder_show_full_path_in_titlebar: yes
+finder_show_pathbar: yes
+finder_show_statusbar: yes
+finder_enable_quit_menu_item: yes
+finder_default_view_style: "Nlsv" # Four-letter codes for the other view modes: icnv, clmv, Flwv"
+finder_show_external_harddrives_on_desktop: yes
+finder_show_harddrives_on_desktop: yes
+finder_show_mounted_servers_on_desktop: yes
+finder_show_removable_media_on_desktop: yes
+finder_show_preview_pane_in_column_view: yes
+finder_iconview_show_item_info: yes
+finder_iconview_show_label_on_bottom: no
+
+hostname_computername: null
+hostname_hostname: null
+hostname_localhostname: null
