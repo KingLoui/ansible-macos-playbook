@@ -2,9 +2,6 @@
 - import_tasks: finder.yml
   tags: [finder]
 
-- import_tasks: dock.yml
-  tags: [dock]
-
 - import_tasks: screensaver.yml
   tags: [screensaver]
 
@@ -16,3 +13,9 @@
 
 - import_tasks: system.yml
   tags: [misc]
+
+- import_tasks: safari.yml
+  tags: [safari]
+
+- import_tasks: dock.yml
+  tags: [dock]

@@ -1,0 +1,108 @@
+---
+
+upgrade_all_homebrew_packages: yes
+homebrew_taps:
+  - homebrew/core
+  - homebrew/php
+  - caskroom/cask
+  - caskroom/fonts
+  - caskroom/versions
+homebrew_installed_packages:
+  - ansible # Installed via Pip.
+  - autoconf
+  - doxygen
+  - gettext
+  - git
+  - go
+  - gpg
+  - hub
+  - sqlite
+  - mcrypt
+  - nmap
+  - node
+  - nvm
+  - openssl
+  - wget
+homebrew_cask_apps:
+  - dash
+  - firefox
+  - font-fira-code
+  - font-roboto
+  - font-roboto-condensed
+  - font-roboto-mono
+  - google-chrome
+  - iterm2-beta
+  - java
+  - sequel-pro
+  - slack
+  - spotify
+  - sublime-text
+  - tower
+  - vlc
+  #- virtualbox -> Buggy installer because of KEXT
+  - whatsapp
+
+mas_upgrade_all_apps: yes
+mas_installed_apps:
+  - { name: iStudiezPro, id: 402989379 }
+  - { name: Keynote, id: 409183694 }
+  - { name: LastPass, id: 926036361 }
+  - { name: MSRemoteDesktop, id: 715768417 }
+  - { name: Numbers, id: 409203825 }
+  - { name: Pages, id: 409201541 }
+  - { name: Reeder, id: 880001334 }
+  - { name: RemoteWakeUp, id: 860874272 }
+  - { name: Xcode, id: 497799835 }
+
+
+## hostname settings
+hostname_computername: mh-mbp
+hostname_hostname: mh-mbp
+hostname_localhostname: mh-mbp
+
+## yadm
+yadm_repo_url: 'https://github.com/KingLoui/dotfiles.git'
+
+
+dock_remove_undefined: yes
+dock_apps:
+  - name: Reeder
+    path: /Applications/Reeder.app
+  - name: Safari
+    path: /Applications/Safari.app
+  - name: iTunes
+    path: /Applications/iTunes.app
+  - name: Mail
+    path: /Applications/Mail.app   
+  - name: Erinnerungen
+    path: /Applications/Reminders.app
+  - name: iStudiez Pro
+    path: /Applications/iStudiez Pro.app
+  - name: Kalender
+    path: /Applications/Calendar.app
+  - name: Fantastical 2
+    path: /Applications/Fantastical 2.app
+  - name: Evernote
+    path: /Applications/Evernote.app
+  - name: Slack
+    path: /Applications/Slack.app
+  - name: Nachrichten
+    path: /Applications/Messages.app
+  - name: iTerm
+    path: /Applications/iTerm.app
+  - name: Tower
+    path: /Applications/Tower.app
+  - name: Sublime Text
+    path: /Applications/Sublime Text.app
+  - name: Transmit
+    path: /Applications/Transmit.app
+  - name: Mathematica
+    path: /Applications/Mathematica.app
+  - name: Parallels
+    path: /Applications/Parallels Desktop.app
+  - name: Remote Desktop
+    path: /Applications/Microsoft Remote Desktop.app 
+dock_spacers:
+  - after: iTunes
+  - after: Nachrichten
+

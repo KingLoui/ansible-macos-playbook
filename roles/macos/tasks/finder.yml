@@ -112,51 +112,44 @@
     value: "{{ finder_show_removable_media_on_desktop|bool }}"
   notify: Restart Finder
 
-- name: Show preview pane in column view ({{ finder_show_preview_pane_in_column_view }})
-  shell: /usr/libexec/PlistBuddy -c "Set :StandardViewOptions:ColumnViewOptions:ColumnShowIcons {{ finder_show_preview_pane_in_column_view|bool }}" ~/Library/Preferences/com.apple.finder.plist
-  notify: Restart Finder
-
 - name: Unhide user library folder
-  shell: chflags nohidden ~/Library/
+  command: chflags nohidden ~/Library/
   notify: Restart Finder
 
 - name: Unhide system volumes folder
-  shell: sudo chflags nohidden /Volumes
+  command: chflags nohidden /Volumes
+  become: true
   notify: Restart Finder
 
 - name: Show item info near icons on the desktop and in other icon views ({{ finder_iconview_show_item_info }})
-  shell: {{ item }}
+  command: /usr/libexec/PlistBuddy -c "Set :{{ item }}" ~/Library/Preferences/com.apple.finder.plist
   with_items:
-    - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:showItemInfo {{ finder_iconview_show_item_info|bool }}" ~/Library/Preferences/com.apple.finder.plist
-    - /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:showItemInfo {{ finder_iconview_show_item_info|bool }}" ~/Library/Preferences/com.apple.finder.plist
-    - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:showItemInfo {{ finder_iconview_show_item_info|bool }}" ~/Library/Preferences/com.apple.finder.plist
+    - "DesktopViewSettings:IconViewSettings:showItemInfo {{ finder_iconview_show_item_info|bool }}"
+    - "StandardViewSettings:IconViewSettings:showItemInfo {{ finder_iconview_show_item_info|bool }}"
   notify: Restart Finder
 
 - name: Show item info to the right of the icons on the desktop ({{ finder_iconview_show_label_on_bottom }})
-  shell: /usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom {{ finder_iconview_show_label_on_bottom|bool }}" ~/Library/Preferences/com.apple.finder.plist
+  command: /usr/libexec/PlistBuddy -c "Set DesktopViewSettings:IconViewSettings:labelOnBottom {{ finder_iconview_show_label_on_bottom|bool }}" ~/Library/Preferences/com.apple.finder.plist
   notify: Restart Finder
 
 - name: Enable snap-to-grid for icons on the desktop and in other icon views
-  shell: {{ item }}
+  command: "{{ item }}"
   with_items:
     - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
-    - /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
     - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
   notify: Restart Finder
 
 - name: Increase grid spacing for icons on the desktop and in other icon views
-  shell: {{ item }}
+  command: "{{ item }}"
   with_items:
     - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
-    - /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
     - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:gridSpacing 100" ~/Library/Preferences/com.apple.finder.plist
   notify: Restart Finder
 
 - name: Increase the size of icons on the desktop and in other icon views
-  shell: {{ item }}
+  command: "{{ item }}"
   with_items:
     - /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
-    - /usr/libexec/PlistBuddy -c "Set :FK_StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
     - /usr/libexec/PlistBuddy -c "Set :StandardViewSettings:IconViewSettings:iconSize 80" ~/Library/Preferences/com.apple.finder.plist
   notify: Restart Finder
 

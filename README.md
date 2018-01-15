@@ -40,10 +40,13 @@ xcode-select --install
 brew install ansible
 
 # Clone this repository
-https://github.com/jeromegamez/ansible-macos-playbook.git
+git clone https://github.com/KingLoui/ansible-macos-playbook.git
 
 # Run the playbook
 ansible-playbook main.yml
+
+# Run specific roles of the playbook
+ansible-playbook main.yml --tags "settings-safari,settings-system"
 ```
 
 ### Variables

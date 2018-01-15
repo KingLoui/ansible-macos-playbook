@@ -16,8 +16,8 @@ system_disable_disk_image_verification: yes
 
 finder_show_file_extensions_warning: no
 finder_warn_before_emptying_the_trash: no
-finder_show_all_files: 
-finder_keep_folders_on_top: 
+finder_show_all_files: yes
+finder_keep_folders_on_top: yes
 finder_show_full_path_in_titlebar: yes
 finder_show_pathbar: yes
 finder_show_statusbar: yes
@@ -27,10 +27,20 @@ finder_show_external_harddrives_on_desktop: yes
 finder_show_harddrives_on_desktop: yes
 finder_show_mounted_servers_on_desktop: yes
 finder_show_removable_media_on_desktop: yes
-finder_show_preview_pane_in_column_view: yes
 finder_iconview_show_item_info: yes
 finder_iconview_show_label_on_bottom: no
 
 hostname_computername: null
 hostname_hostname: null
 hostname_localhostname: null
+
+safari_show_full_url_in_address_bar: yes
+safari_open_safe_files_automatically: no
+safari_enable_status_bar: yes
+safari_enable_developer_menu: yes
+safari_autofill_passwords: no
+
+dock_apps: []
+dock_spacers: []
+dock_force_install: no
+dock_remove_undefined: yes

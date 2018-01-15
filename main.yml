@@ -2,45 +2,33 @@
 
 #echo "$MY_USER ALL=(ALL) NOPASSWD:ALL" | sudo tee --append /etc/sudoers
 
-- name: Everything's gonna be alright.
+- name: Mac Dev Playbook
   hosts: localhost
   vars_files:
-    - vars/defaults.yml
+    - default.config.yml
 
   pre_tasks:
-    - name: Include user configuration
-      include_vars: "{{ item }}"
-      with_first_found:
-        - files:
-          - "{{ ansible_env.USER }}.yml"
-          skip: true
-      tags: [always]
+    - include_vars: "{{ item }}"
+      with_fileglob:
+        - ../config.yml
+      tags: ['always']
 
   roles:
-    - name: essentials
-      tags: [essentials]
-      when: enable_essentials
+    - role: geerlingguy.homebrew
+      tags: ['packages, homebrew']
 
-    - name: shell
-      tags: [shell]
+    - role: packages
+      tags: ['packages, extra']
 
     - name: yadm
-      tags: [yadm]
+      tags: [config, dotfiles]
 
-    - name: dev
-      tags: [dev]
+    - role: geerlingguy.mas
+      when: mas_installed_apps
+      tags: ['mas']
 
-    - name: settings/hostname
-      tags: [settings-hostname]
-
-    - name: settings/safari
-      tags: [settings-safari]
-
-    - name: settings/system
-      tags: [settings-system]
-
-    - name: apps
-      tags: [apps]
+    - name: macos
+      tags: [config, macos]
 
   tasks:
     - name: Upgrade all homebrew packages
