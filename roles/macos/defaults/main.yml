@@ -13,6 +13,8 @@ system_springloading_directories_delay: 0
 system_disable_dsstore_on_network_shares: yes
 system_disable_dsstore_on_usb_drives: yes
 system_disable_disk_image_verification: yes
+system_doubleclick_on_titlebar_action: "Minimize"
+system_interface_style: "Dark"
 
 finder_show_file_extensions_warning: no
 finder_warn_before_emptying_the_trash: no

@@ -41,4 +41,5 @@ fi
 cd "$TARGET_DIR"
 
 echo "Running the playbook"
-ansible-playbook main.yml
+ansible-galaxy install -r requirements.yml
+ansible-playbook main.yml -i inventory -K

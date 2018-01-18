@@ -1,4 +1,16 @@
 ---
+
+- name: Ensure required package managers
+  homebrew:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+   - composer
+   - node
+   - python
+   - python3
+   - ruby
+
 - name: Install global Composer packages.
   composer:
     command: "{{ (item.state | default('present') == 'absent') | ternary('remove', 'require') }}"
@@ -22,7 +34,9 @@
     state: "{{ item.state | default('present') }}"
     version: "{{ item.version | default(omit) }}"
     executable: "{{ item.executable | default(omit) }}"
+    extra_args: "{{ item.extra_args | default(omit) }}"
   with_items: "{{ pip_packages }}"
+  become: yes
 
 - name: Install global Ruby gems.
   gem:

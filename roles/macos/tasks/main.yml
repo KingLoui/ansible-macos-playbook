@@ -17,5 +17,8 @@
 - import_tasks: safari.yml
   tags: [safari]
 
+- import_tasks: default-applications.yml
+  tags: [dock]
+
 - import_tasks: dock.yml
   tags: [dock]

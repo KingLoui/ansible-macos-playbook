@@ -1,0 +1,59 @@
+---
+
+- name: Ensure ZSH is installed.
+  homebrew:
+    name: zsh
+    state: latest
+
+- name: Register homebrewed ZSH as globally available shell.
+  become: yes
+  lineinfile:
+    dest: '/etc/shells'
+    line: "/usr/local/bin/zsh"
+
+- name: Set ZSH as shell for {{ ansible_user_id }}.
+  become: yes
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /usr/local/bin/zsh
+
+- name: Clone oh-my-zsh.
+  git:
+    repo: https://github.com/robbyrussell/oh-my-zsh.git
+    dest: ~/.oh-my-zsh
+
+
+- name: Install base16-shell
+  git:
+    repo: https://github.com/chriskempson/base16-shell.git
+    dest: ~/.config/base16-shell
+
+- name: Install zsh-completions
+  git:
+    repo: https://github.com/zsh-users/zsh-completions
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-completions
+
+- name: Install zsh-syntax-highlighting.
+  git:
+    repo: https://github.com/zsh-users/zsh-syntax-highlighting.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+
+- name: Install zsh-autosuggestions.
+  git:
+    repo: https://github.com/zsh-users/zsh-autosuggestions.git
+    dest: ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+
+- name: Install zsh-notify.
+  git:
+    repo: https://github.com/marzocchi/zsh-notify.git
+    dest: ~/.oh-my-zsh/custom/plugins/notify
+
+- name: Install Powerlevel9k zsh theme
+  git:
+    repo: https://github.com/bhilburn/powerlevel9k.git
+    dest: ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+
+
+
+    

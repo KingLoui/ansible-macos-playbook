@@ -1,0 +1,18 @@
+---
+
+- name: Create nvim vimrc dir.
+  file:
+    path: $HOME/.config/nvim
+    state: directory
+
+- name: Symlink .vimrc for nvim
+  file:
+    src: $HOME/.vimrc
+    dest: $HOME/.config/nvim/init.vim
+    state: link
+
+- name: Install vim plugins.
+  shell: vim --not-a-term "+silent call dein#install()" +qall
+
+- name: Install neovim plugins.
+  shell: nvim "+silent call dein#install()" +UpdateRemotePlugins +qall

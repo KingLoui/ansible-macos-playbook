@@ -1,48 +1,226 @@
 ---
 
 upgrade_all_homebrew_packages: yes
+mas_upgrade_all_apps: yes
 homebrew_taps:
   - homebrew/core
   - homebrew/php
+  - homebrew/services
   - caskroom/cask
   - caskroom/fonts
   - caskroom/versions
+  - crisidev/homebrew-chunkwm # chunkwm
+  - koekeishiya/formulae      # chunkwm, khd
+
+##
+## PACKAGES
+##
+
 homebrew_installed_packages:
-  - ansible # Installed via Pip.
-  - autoconf
-  - doxygen
-  - gettext
+  # Install GNU packages.
+  # https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
+  - coreutils
+  - binutils
+  - diffutils
+  - { name: ed, install_options: "default-names" }
+  - { name: findutils, install_options: "with-default-names" }
+  - gawk
+  - { name: gnu-indent, install_options: "with-default-names" }
+  - { name: gnu-sed, install_options: "with-default-names" }
+  - { name: gnu-tar, install_options: "with-default-names" }
+  - { name: gnu-which, install_options: "with-default-names" }
+  - gnutls
+  - { name: grep, install_options: "with-default-names" }
+  - gzip
+  - screen
+  - watch
+  - { name: wdiff, install_options: "with-gettext" }
+  - wget
+  # Update GNU pre-installed packages.
+  - bash
+  - emacs
+  - gdb
+  - gpatch
+  - less
+  - m4
+  - make
+  - nano
+
+  # Update non-GNU pre-installed packages.
+  - { name: curl, install_options: "with-nghttp2" }
+  - file-formula
   - git
+  - openssh
+  - perl
+  - python
+  - rsync
+  - svn
+  - unzip
+
+  # Some other GNU tools.
+  - autoconf                  # build tool
+  - gettext                   # gnu translation tool @todo link
+  - gpg                       # gnu privacy guard
+  - readline                  # gnu readline
+
+  # More terminal tools.
+  - git-standup               # recall what you did on the last working day
+  - httpie                    # cli http client
+  - iperf                     # bandwidth benchmarking
+  - lynx                      # browser
+  - nmap                      # network mapper
+  - openssl                   # ssl/tls toolkit
+  - p7zip                     # 7 zip
+  - pigz                      # parallel gzip
+  - pv                        # pipe viewer
+  - { name: weechat, install_options: "with-perl,with-python,with-lua" }
+  - wrk                       # http benchmarking
+  - zopfli                    # zopfli compression
+  - ack                       # faster search
+  - tmux
+  - reattach-to-user-namespace
+  - the_silver_searcher
+  - terminal-notifier
+
+  # Programming languages
+  - lua
+  - node
   - go
-  - gpg
+  - { name: php71, install_options: "with-pear,without-fpm" }
+  - python3
+  - ruby
+  - elm
+  - r
+
+  # Libraries
+  - luajit                    # required by vim
+
+  # Essential development tools/libraries.
+  - chunkwm                   # tiling window manager
+  - exa                       # ls replacement
+  - fasd                      # autojump
+  - fzf                       # fuzzy finder
+  - khd                       # hotkey daemon
+  - massren                   # mass renaming in vim
+  - mosh                      # mobile shell
+  - rename                    # regex rename
+  - ssh-copy-id               # send public key to remote
+  - the_silver_searcher       # ag, faster than ack
+  - tree                      # recursive directory listing
+  - { name: vim, install_options: "with-luajit,without-ruby,with-override-system-vi" }
+  - neovim                    # the new vim
+  - doxygen
   - hub
+  - heroku
   - sqlite
   - mcrypt
-  - nmap
-  - node
   - nvm
-  - openssl
-  - wget
+  - cppcheck
+
+  # Package managers
+  - composer
+
+  # Shell completions
+  - bash-completion2         # bash 4
+  - cap-completion           # capistrano
+  - open-completion          # open
+  - vagrant-completion       # vagrant
+  - wpcli-completion         # wp-cli
+
+  # Image/Video tools
+  - exiv2
+  #- name: ffmpeg
+  #  install_options: "with-fdk-aac,with-ffplay,with-freetype,with-libass,with-libquvi,with-libvorbis,with-libvpx,with-opus,with-x265,with-theora"
+  - gifsicle
+  - { name: imagemagick, install_options: "with-webp" }
+  - mozjpeg
+  - optipng
+  - pngcheck
+  - webp
+
+homebrew_services:
+  - khd                    # hotkey daemon
+  - chunkwm                # tiling window manager
+
+composer_packages:
+  - name: hirak/prestissimo    # parallel composer downloads
+  - name: wp-cli/wp-cli        # wp cli tool
+  - name: asm89/twig-lint      # vim linter for twig
+  - name: squizlabs/php_codesniffer
+
+npm_packages:
+  - name: yarn                 # package manager
+  - name: webpack              # build tool
+  - name: bower                # package manager
+  - name: csslint
+  - name: less
+  - name: gulp                 # build tool
+  - name: svgo                 # svg minifier
+  - name: jsonlint             # vim linter for json
+  - name: markdownlint-cli     # vim linter for markdown
+  - name: eslint               # vim linter for javascript
+  - name: eslint-plugin-import # dependency of global eslint
+
+gem_packages:
+  - name: bundler              # package manager
+  - name: capistrano           # deploy tool
+  - name: jekyll               # github pages
+  - name: jekyll-feed          # github pages
+  - name: rubocop              # drupal vm lint
+  - name: neovim               # ruby provider for neovim
+  - name: sass                 # vim linter for sass
+
+pip_packages:
+  - name: mkdocs                       # drupal vm docs
+  - { name: neovim, executable: pip2 } # python2 provider for neovim
+  - { name: neovim, executable: pip3 } # python3 provider for neovim
+  - name: ansible-lint                 # vim linter for ansible
+  - name: yamllint                     # vim linter for bash
+  - name: proselint                    # vim linter for text
+  - { name: CodeIntel, executable: pip3, extra_args: --pre --upgrade }            # codeintel for sublime
+
+
+##
+## APPS
+##
+
 homebrew_cask_apps:
+  - clipy
   - dash
   - firefox
   - font-fira-code
+  - font-fira-mono-for-powerline
   - font-roboto
   - font-roboto-condensed
   - font-roboto-mono
+  - font-hack-nerd-font
+  - font-awesome-terminal-fonts
+  - franz
+  - fliqlo 
   - google-chrome
+  - iina
+  - eclipse-ide
   - iterm2-beta
   - java
+  - macdown
+  - macvim
   - sequel-pro
-  - slack
   - spotify
+  - skype
   - sublime-text
   - tower
-  - vlc
+  - vagrant
   #- virtualbox -> Buggy installer because of KEXT
-  - whatsapp
 
-mas_upgrade_all_apps: yes
+  # Quick Look plugins
+  - qlcolorcode            # syntax highlighting
+  - qlstephen              # files without file extensions
+  - qlmarkdown             # markdown
+  - quicklook-json         # json
+  - quicklook-csv          # csv
+  - qlimagesize            # display image size and resolution
+  - webpquicklook          # webp
+
 mas_installed_apps:
   - { name: iStudiezPro, id: 402989379 }
   - { name: Keynote, id: 409183694 }
@@ -53,6 +231,47 @@ mas_installed_apps:
   - { name: Reeder, id: 880001334 }
   - { name: RemoteWakeUp, id: 860874272 }
   - { name: Xcode, id: 497799835 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+iterm2_enable_automatic_updates: true
+iterm2_preference_folder: "{{ playbook_dir }}/files"
+
+
+
+
+default_applications:
+  # Iina
+  - { extension: avi, handler: com.colliderli.iina }
+  - { extension: flv, handler: com.colliderli.iina }
+  - { extension: mkv, handler: com.colliderli.iina }
+  - { extension: mov, handler: com.colliderli.iina }
+  - { extension: mp4, handler: com.colliderli.iina }
+  - { extension: mpg, handler: com.colliderli.iina }
+  # MacDown
+  - { extension: md, handler: com.uranusjr.macdown }
+  # MacVim
+  - { extension: cfg, handler: com.sublimetext.3 }
+  - { extension: css, handler: com.sublimetext.3 }
+  - { extension: inc, handler: com.sublimetext.3 }
+  - { extension: js, handler: com.sublimetext.3 }
+  - { extension: json, handler: com.sublimetext.3 }
+  - { extension: php, handler: com.sublimetext.3 }
+  - { extension: scss, handler: com.sublimetext.3 }
+  - { extension: txt, handler: com.sublimetext.3 }
+  - { extension: yml, handler: com.sublimetext.3 }
+
+
 
 
 ## hostname settings
@@ -84,8 +303,8 @@ dock_apps:
     path: /Applications/Fantastical 2.app
   - name: Evernote
     path: /Applications/Evernote.app
-  - name: Slack
-    path: /Applications/Slack.app
+  - name: Franz
+    path: /Applications/Franz.app
   - name: Nachrichten
     path: /Applications/Messages.app
   - name: iTerm

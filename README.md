@@ -42,11 +42,14 @@ brew install ansible
 # Clone this repository
 git clone https://github.com/KingLoui/ansible-macos-playbook.git
 
+# Download requirements
+ansible-galaxy install -r requirements.yml
+
 # Run the playbook
-ansible-playbook main.yml
+ansible-playbook main.yml -i inventory -K
 
 # Run specific roles of the playbook
-ansible-playbook main.yml --tags "settings-safari,settings-system"
+ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
 ```
 
 ### Variables
@@ -59,6 +62,10 @@ in that file however you like.
 
 This playbook is heavily inspired by
 [Jeff Geerling's mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
+https://github.com/oxyc/mac-playbook
+https://github.com/oxyc/dotfiles
+https://github.com/p1xelHer0/dotfiles/
+https://github.com/STAR-ZERO/dotfiles
 
 The macOS settings (a.k.a. `defaults write`s) are mostly taken from
 [Mathias Bynens' defaults scripts](https://mths.be/macos) or from one of the
