@@ -188,13 +188,6 @@ homebrew_cask_apps:
   - clipy
   - dash
   - firefox
-  - font-fira-code
-  - font-fira-mono-for-powerline
-  - font-roboto
-  - font-roboto-condensed
-  - font-roboto-mono
-  - font-hack-nerd-font
-  - font-awesome-terminal-fonts
   - franz
   - fliqlo 
   - google-chrome
@@ -211,6 +204,15 @@ homebrew_cask_apps:
   - tower
   - vagrant
   #- virtualbox -> Buggy installer because of KEXT
+
+  # Fonts
+  - font-fira-code
+  - font-fira-mono-for-powerline
+  - font-roboto
+  - font-roboto-condensed
+  - font-roboto-mono
+  - font-hack-nerd-font
+  - font-awesome-terminal-fonts
 
   # Quick Look plugins
   - qlcolorcode            # syntax highlighting
@@ -280,7 +282,7 @@ hostname_hostname: mh-mbp
 hostname_localhostname: mh-mbp
 
 ## yadm
-yadm_repo_url: 'https://github.com/KingLoui/dotfiles.git'
+dotfiles_repo_url: 'https://github.com/KingLoui/dotfiles.git'
 
 
 dock_remove_undefined: yes

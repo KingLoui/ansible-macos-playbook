@@ -1,7 +1,5 @@
 ---
 
-#echo "$MY_USER ALL=(ALL) NOPASSWD:ALL" | sudo tee --append /etc/sudoers
-
 - hosts: all
   connection: local
   vars_files:
@@ -17,28 +15,34 @@
     - role: geerlingguy.homebrew
       tags: [packages, apps]
 
-    - name: yadm
-      tags: [config, dotfiles]
-
     - role: geerlingguy.mas
       when: mas_installed_apps
-      tags: apps
+      tags: [apps]
 
-    - name: macos
+    - name: KingLoui.macos
       tags: [config, macos]
 
   tasks:
     - import_tasks: tasks/extra-packages.yml
       tags: [packages, extra-packages]
+
+    - import_tasks: tasks/dotfiles.yml
+      tags: [config, dotfiles]
+
     - import_tasks: tasks/shell.yml
       tags: [config, shell]
+
     - import_tasks: tasks/screensaver.yml
-      tags: config
+      tags: [config, screensaver]
+
     - import_tasks: tasks/iterm2.yml
       tags: [config, iterm2]
+
     - import_tasks: tasks/sublime-text.yml
       tags: [config, sublime-text]
+
     - import_tasks: tasks/services.yml
-      tags: config
+      tags: [config, services]
+
     - import_tasks: tasks/vim.yml
       tags: [config, vim]
