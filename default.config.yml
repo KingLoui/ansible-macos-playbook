@@ -207,12 +207,13 @@ homebrew_cask_apps:
 
   # Fonts
   - font-fira-code
-  - font-fira-mono-for-powerline
   - font-roboto
   - font-roboto-condensed
   - font-roboto-mono
-  - font-hack-nerd-font
+  - font-fira-mono-for-powerline
   - font-awesome-terminal-fonts
+  - font-meslo-nerd-font
+  - font-hack-nerd-font
 
   # Quick Look plugins
   - qlcolorcode            # syntax highlighting
