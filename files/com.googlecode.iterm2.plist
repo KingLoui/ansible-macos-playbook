@@ -63,11 +63,11 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1837 128 636 230 0 0 3008 1670 </string>
+	<string>1837 128 636 362 0 0 3008 1670 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>269 266 796 473 0 0 3008 1670 </string>
+	<string>269 463 918 401 0 0 3008 1670 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1513 844 722 793 0 0 3008 1670 </string>
+	<string>1513 842 722 798 0 0 3008 1670 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -638,11 +638,11 @@
 			<key>Name</key>
 			<string>Default</string>
 			<key>Non Ascii Font</key>
-			<string>Monaco 12</string>
+			<string>ShureTechMonoNerdFontC-Regular 15</string>
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>KnackNerdFontC-Italic 14</string>
+			<string>MesloLGLDZNerdFontC-RegularForPowerline 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<false/>
 			<key>Option Key Sends</key>
