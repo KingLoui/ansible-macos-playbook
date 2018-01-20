@@ -263,7 +263,7 @@ default_applications:
   - { extension: mpg, handler: com.colliderli.iina }
   # MacDown
   - { extension: md, handler: com.uranusjr.macdown }
-  # MacVim
+  # Sublime Text
   - { extension: cfg, handler: com.sublimetext.3 }
   - { extension: css, handler: com.sublimetext.3 }
   - { extension: inc, handler: com.sublimetext.3 }
@@ -300,8 +300,6 @@ dock_apps:
     path: /Applications/Reminders.app
   - name: iStudiez Pro
     path: /Applications/iStudiez Pro.app
-  - name: Kalender
-    path: /Applications/Calendar.app
   - name: Fantastical 2
     path: /Applications/Fantastical 2.app
   - name: Evernote
