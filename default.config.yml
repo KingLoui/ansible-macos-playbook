@@ -210,7 +210,11 @@ homebrew_cask_apps:
   - font-roboto
   - font-roboto-condensed
   - font-roboto-mono
+  
   - font-fira-mono-for-powerline
+  - font-meslo-for-powerline
+  - font-inconsolata-dz-for-powerline
+
   - font-awesome-terminal-fonts
   - font-meslo-nerd-font
   - font-hack-nerd-font
