@@ -52,11 +52,30 @@ ansible-playbook main.yml -i inventory -K
 ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
 ```
 
-### Variables
+### TODO
 
-If you want to use this playbook for your own computer, fork the repository and
-execute `cp vars/defaults.yml vars/${USER}.yml` - you can change any variable
-in that file however you like.
+Configure finder sidebar
+Configure mail accounts
+Install:
+	adobe stuff
+	little snitch
+	resilio sync
+	safari uBlock origin
+	transmit
+	mailbutler
+	parallels desktop
+	clean my Mac
+	debookee
+	archiver
+	office
+	mathematica
+	kaleidoscope
+	fantastical
+	lastpass safari extension
+
+Allow khd, chunkwm and iterm2 in accessability services
+
+
 
 ## Acknowledgements
 
@@ -66,7 +85,3 @@ https://github.com/oxyc/mac-playbook
 https://github.com/oxyc/dotfiles
 https://github.com/p1xelHer0/dotfiles/
 https://github.com/STAR-ZERO/dotfiles
-
-The macOS settings (a.k.a. `defaults write`s) are mostly taken from
-[Mathias Bynens' defaults scripts](https://mths.be/macos) or from one of the
-dotfiles repos from [http://dotfiles.github.io](http://dotfiles.github.io).
