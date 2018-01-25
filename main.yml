@@ -3,7 +3,8 @@
 - hosts: all
   connection: local
   vars_files:
-    - default.config.yml
+    - vars/packages_apps.yml
+    - vars/settings.yml
 
   pre_tasks:
     - include_vars: "{{ item }}"

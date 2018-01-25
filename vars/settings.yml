@@ -1,0 +1,77 @@
+---
+
+iterm2_enable_automatic_updates: true
+iterm2_preference_folder: "{{ playbook_dir }}/files"
+
+
+default_applications:
+  # Iina
+  - { extension: avi, handler: com.colliderli.iina }
+  - { extension: flv, handler: com.colliderli.iina }
+  - { extension: mkv, handler: com.colliderli.iina }
+  - { extension: mov, handler: com.colliderli.iina }
+  - { extension: mp4, handler: com.colliderli.iina }
+  - { extension: mpg, handler: com.colliderli.iina }
+  # MacDown
+  - { extension: md, handler: com.uranusjr.macdown }
+  # Sublime Text
+  - { extension: cfg, handler: com.sublimetext.3 }
+  - { extension: css, handler: com.sublimetext.3 }
+  - { extension: inc, handler: com.sublimetext.3 }
+  - { extension: js, handler: com.sublimetext.3 }
+  - { extension: json, handler: com.sublimetext.3 }
+  - { extension: php, handler: com.sublimetext.3 }
+  - { extension: scss, handler: com.sublimetext.3 }
+  - { extension: txt, handler: com.sublimetext.3 }
+  - { extension: yml, handler: com.sublimetext.3 }
+
+
+## hostname settings
+hostname_computername: mh-mbp
+hostname_hostname: mh-mbp
+hostname_localhostname: mh-mbp
+
+## yadm
+dotfiles_repo_url: 'https://github.com/KingLoui/dotfiles.git'
+
+
+dock_remove_undefined: yes
+dock_apps:
+  - name: Reeder
+    path: /Applications/Reeder.app
+  - name: Safari
+    path: /Applications/Safari.app
+  - name: iTunes
+    path: /Applications/iTunes.app
+  - name: Mail
+    path: /Applications/Mail.app   
+  - name: Erinnerungen
+    path: /Applications/Reminders.app
+  - name: iStudiez Pro
+    path: /Applications/iStudiez Pro.app
+  - name: Fantastical 2
+    path: /Applications/Fantastical 2.app
+  - name: Evernote
+    path: /Applications/Evernote.app
+  - name: Franz
+    path: /Applications/Franz.app
+  - name: Nachrichten
+    path: /Applications/Messages.app
+  - name: iTerm
+    path: /Applications/iTerm.app
+  - name: Tower
+    path: /Applications/Tower.app
+  - name: Sublime Text
+    path: /Applications/Sublime Text.app
+  - name: Transmit
+    path: /Applications/Transmit.app
+  - name: Mathematica
+    path: /Applications/Mathematica.app
+  - name: Parallels Desktop
+    path: /Applications/Parallels Desktop.app
+  - name: Remote Desktop
+    path: /Applications/Microsoft Remote Desktop.app 
+dock_spacers:
+  - after: iTunes
+  - after: Nachrichten
+
