@@ -186,8 +186,9 @@ pip_packages:
 homebrew_cask_apps:
   - clipy
   - dash
+  - docker
   - evernote
-  - firefox
+  - firefox-nightly
   - franz
   - fliqlo 
   - google-chrome
@@ -197,7 +198,9 @@ homebrew_cask_apps:
   - java
   - macdown
   - macvim
+  - mailbutler
   - plexamp
+  - resilio-sync
   - sequel-pro
   - spotify
   - skype
@@ -215,6 +218,7 @@ homebrew_cask_apps:
   - font-fira-mono-for-powerline
   - font-meslo-for-powerline
   - font-inconsolata-dz-for-powerline
+  - font-source-code-pro-for-powerline
 
   - font-awesome-terminal-fonts
   - font-meslo-nerd-font

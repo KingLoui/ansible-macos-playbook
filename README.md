@@ -1,30 +1,27 @@
-# Ansible MacOS Playbook
+# Ansible macOS Development Playbook
 
-This is the playbook I use after a clean install of MacOS to set everything up.
+This playbook helps me setting up a new macOS based dev machine from scratch.
 
-Advantages for me over using a shell script based setup
+It does:
 
-- I can run the playbook over and over again with the same results.
-- Tasks are only executed when changes are needed.
-- The documentation about what is done is right in the output,
-  instead of only in the comments.
-- When a task doesn't work anymore, for example after a new macOS release,
-  I will know immediately which one and why.
-- It helps me to improve my Ansible skills :)
+1. Install packages (via homebrew, pip, npm, composer, gem)
+2. Install apps (via homebrew cask, Mac App Store)
+3. Install my dotfiles (via yadm)
+4. Install zsh and zsh-plugins
+5. Install sublime-text configs
+6. Enable khd hotkey daemon and chunkwm window manager services
+7. Install Vim/Neovim plugins
 
 My dotfiles are managed with [yadm](https://thelocehiliosan.github.io/yadm/)
-and stored in a private git repository which is pulled in the first time
-the playbook is run. The repository is private because it includes
-sensitive data like private keys and GitHub tokens. This approach
-allows me to only need the login data of the dotfiles repo
-provider when setting up a computer from scratch.
+and stored in separate git repository which is pulled in the first time
+the playbook is run. 
 
 ## Installation
 
 ### Automated
 
 ```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/KingLoui/ansible-macos-playbook/master/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/kinglouie/ansible-macos-playbook/master/install.sh)"
 ```
 
 ### Manual
@@ -40,48 +37,71 @@ xcode-select --install
 brew install ansible
 
 # Clone this repository
-git clone https://github.com/KingLoui/ansible-macos-playbook.git
+git clone https://github.com/kinglouie/ansible-macos-playbook.git
 
 # Download requirements
 ansible-galaxy install -r requirements.yml
 
 # Run the playbook
 ansible-playbook main.yml -i inventory -K
-
-# Run specific roles of the playbook
+```
+### Only run specific tasks
+```
 ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
 ```
 
-### TODO
+## Things that still need to be done manually
 
-Configure finder sidebar
-Configure mail accounts
-Install:
-	adobe stuff
-	little snitch
-	resilio sync
-	safari uBlock origin
-	transmit
-	mailbutler
-	parallels desktop
-	clean my Mac
-	debookee
-	archiver
-	office
-	mathematica
-	kaleidoscope
-	fantastical
-	lastpass safari extension
+### Configuration
+1. Configure Finder Sidebar
+2. Configure Mail accounts
+3. Configure Resilio Sync
+4. Configure Remote Desktop
+5. Configure Little Snitch
+6. Allow `chunkwm`, `khd` and `iTerm.app` Accessibility control under Security & Privacy preferences.
+7. Symlink external dirs `find /Volumes/Data/Synced -maxdepth 1 -mindepth 1 -type d -exec ln -s '{}' ~/Synced \;`
+8. Login
+	- Lastpass
+	- Firefox sync
+	- Github
+	- iStudiez Pro
+	- Transmit
+9. Install Licences
+	- Tower
+	- Adobe CC
+	- Sublime Text
+	- Hopper Disassembler
+	- Mathematica
 
-Allow khd, chunkwm and iterm2 in accessability services
+### Software to install
+- Adobe CC
+- Little Snitch
+- Safari plugins
+	- uBlock
+	- LastPass
+- Firefox plugins
+	- uBlock
+	- LastPass
+	- Reddit Enhancement Suite
+- Transmit
+- Mailbutler
+- Parallels Desktop
+- CleanMyMac
+- Debookee
+- Archiver
+- Microsoft Office
+- Mathematica
+- Kaleidoscope
+- Fantastical
 
+## TODO
 
+..
 
 ## Acknowledgements
 
-This playbook is heavily inspired by
-[Jeff Geerling's mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook).
-https://github.com/oxyc/mac-playbook
-https://github.com/oxyc/dotfiles
-https://github.com/p1xelHer0/dotfiles/
-https://github.com/STAR-ZERO/dotfiles
+This playbook is inspired by:
+
+- [geerlingguy/mac-dev-playbook](https://github.com/geerlingguy/mac-dev-playbook)
+- [oxyc/mac-playbook](https://github.com/oxyc/mac-playbook)
+

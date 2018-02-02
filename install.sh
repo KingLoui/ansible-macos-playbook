@@ -5,7 +5,7 @@ set -o errtrace
 set -o nounset
 
 REPO="https://github.com/KingLoui/ansible-macos-playbook.git"
-TARGET_DIR="$HOME/devenv/ansible-macos-playbook"
+TARGET_DIR="$HOME/Synced/mh_project_personal/ansible-macos-playbook"
 
 # Ask for sudo password upfront if needed
 if ! sudo -n true 2>/dev/null; then

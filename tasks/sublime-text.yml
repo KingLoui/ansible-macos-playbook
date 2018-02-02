@@ -2,6 +2,7 @@
 
 - set_fact:
     lib_dir: "$HOME/Library/Application Support/Sublime Text 3"
+    
 - set_fact:
     config_dir: "{{ lib_dir }}/Packages/User/"
     package_dir: "{{ lib_dir }}/Installed Packages"
@@ -10,9 +11,10 @@
 - name: Ensure sublime text directories exists.
   file:
     path: "{{ item }}"
-    owner: "{{ ansible_user_id }}"
     state: directory
-    mode: 0775
+    owner: "{{ ansible_user_id }}"
+    group: staff
+    mode: 0700
   with_items:
     - "{{ lib_dir }}"
     - "{{ config_dir }}"
@@ -27,5 +29,8 @@
   copy:
     src: "{{ item }}"
     dest: "{{ config_dir }}"
+    mode: 0644
+    owner: "{{ ansible_user_id }}"
+    group: staff
   with_fileglob:
     - ../files/sublime-text/*
