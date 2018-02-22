@@ -4,6 +4,7 @@ homebrew_taps:
   - homebrew/core
   - homebrew/php
   - homebrew/services
+  - homebrew/versions
   - caskroom/cask
   - caskroom/fonts
   - caskroom/versions
@@ -63,11 +64,13 @@ homebrew_installed_packages:
   - readline                  # gnu readline
 
   # More terminal tools.
+  - antigen                   # zsh framework
   - git-standup               # recall what you did on the last working day
   - httpie                    # cli http client
   - iperf                     # bandwidth benchmarking
   - lynx                      # browser
   - nmap                      # network mapper
+  - neofetch                  # system info
   - openssl                   # ssl/tls toolkit
   - p7zip                     # 7 zip
   - pigz                      # parallel gzip
@@ -95,7 +98,7 @@ homebrew_installed_packages:
   - luajit                    # required by vim
 
   # Essential development tools/libraries.
-  - chunkwm                   # tiling window manager
+  - { name: chunkwm, install_options: "with-purify"} # tiling window manager
   - exa                       # ls replacement
   - fasd                      # autojump
   - fzf                       # fuzzy finder
@@ -104,7 +107,6 @@ homebrew_installed_packages:
   - mosh                      # mobile shell
   - rename                    # regex rename
   - ssh-copy-id               # send public key to remote
-  - the_silver_searcher       # ag, faster than ack
   - tree                      # recursive directory listing
   - { name: vim, install_options: "with-luajit,without-ruby,with-override-system-vi" }
   - neovim                    # the new vim
@@ -158,6 +160,7 @@ npm_packages:
   - name: jsonlint             # vim linter for json
   - name: markdownlint-cli     # vim linter for markdown
   - name: eslint               # vim linter for javascript
+  - name: pure                 # pure promt theme for zsh
   - name: eslint-plugin-import # dependency of global eslint
 
 gem_packages:
@@ -177,6 +180,11 @@ pip_packages:
   - name: yamllint                     # vim linter for bash
   - name: proselint                    # vim linter for text
   - { name: CodeIntel, executable: pip3, extra_args: --pre --upgrade }            # codeintel for sublime
+  # to be tested ..
+  - { name: virtualenv, executable: pip2 } # python2 provider for virtualenv
+  - { name: virtualenv, executable: pip3 } # python3 provider for virtualenv
+  - name: pycodestyle
+  - name: pylint
 
 
 ##
@@ -189,23 +197,26 @@ homebrew_cask_apps:
   - docker
   - evernote
   - firefox-nightly
-  - franz
-  - fliqlo 
+  - fliqlo
   - google-chrome
+  - hyper
   - iina
   - eclipse-ide
   - iterm2-beta
   - java
+  - kitty
   - macdown
   - macvim
   - mailbutler
   - plexamp
+  - rambox
   - resilio-sync
   - sequel-pro
   - spotify
   - skype
   - sublime-text
   - tower
+  # - teamviewer -> needs gui to install
   - vagrant
   #- virtualbox -> Buggy installer because of KEXT
 
@@ -214,7 +225,7 @@ homebrew_cask_apps:
   - font-roboto
   - font-roboto-condensed
   - font-roboto-mono
-  
+
   - font-fira-mono-for-powerline
   - font-meslo-for-powerline
   - font-inconsolata-dz-for-powerline
