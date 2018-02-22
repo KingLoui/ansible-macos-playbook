@@ -84,7 +84,6 @@ ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
 	- LastPass
 	- Reddit Enhancement Suite
 - Transmit
-- Mailbutler
 - Parallels Desktop
 - CleanMyMac
 - Debookee

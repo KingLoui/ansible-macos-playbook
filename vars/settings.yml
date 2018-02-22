@@ -88,8 +88,6 @@ finder:
   show_harddrives_on_desktop: yes
   show_mounted_servers_on_desktop: yes
   show_removable_media_on_desktop: yes
-  iconview_show_item_info: yes
-  iconview_show_label_on_bottom: no
   hide_user_library: no
   hide_system_volumes: no
   expand_infopane: 
@@ -103,6 +101,10 @@ finder:
   iconview_arrange_by: "grid"
   iconview_grid_spacing: 60
   iconview_icon_size: 50
+  iconview_show_item_info: yes
+  iconview_show_label_on_bottom: no
+  iconview_text_size: 12
+  iconview_show_icon_preview: yes
   enable_quicklook_text_selection: yes
   disable_all_animations: yes
 
@@ -131,8 +133,8 @@ dock:
       path: /Applications/Fantastical 2.app
     - name: Evernote
       path: /Applications/Evernote.app
-    - name: Franz
-      path: /Applications/Franz.app
+    - name: Rambox
+      path: /Applications/Rambox.app
     - name: Nachrichten
       path: /Applications/Messages.app
     - name: iTerm
@@ -194,7 +196,7 @@ terminal:
 
 
 iterm2_enable_automatic_updates: true
-iterm2_preference_folder: "{{ playbook_dir }}/files"
+iterm2_preference_folder: "$HOME/.config/iterm2"
 
 ## yadm
 dotfiles_repo_url: 'https://github.com/KingLoui/dotfiles.git'

@@ -4,7 +4,7 @@
 		"LESS"
 	],
 	"installed_packages":
-	[	
+	[
 		"SublimeLinter",
 		"SublimeLinter-php",
 		"SublimeLinter-cppcheck",
@@ -28,6 +28,7 @@
 		"Emmet",
 		"Terminal",
 		"Focus File on Sidebar",
-		"A File Icon"
+		"A File Icon",
+		"TrailingSpaces"
 	]
 }

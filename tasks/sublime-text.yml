@@ -2,9 +2,9 @@
 
 - set_fact:
     lib_dir: "$HOME/Library/Application Support/Sublime Text 3"
-    
+
 - set_fact:
-    config_dir: "{{ lib_dir }}/Packages/User/"
+    config_dir: "{{ lib_dir }}/Packages/User"
     package_dir: "{{ lib_dir }}/Installed Packages"
     package_control_url: "https://packagecontrol.io/Package Control.sublime-package"  
 
@@ -18,19 +18,17 @@
   with_items:
     - "{{ lib_dir }}"
     - "{{ config_dir }}"
-    - "{{ package_dir }}"    
+    - "{{ package_dir }}"
 
 - name: Install Sublime package control
-  get_url: 
-    dest: "{{ package_dir }}/Package Control.sublime-package" 
+  get_url:
+    dest: "{{ package_dir }}/Package Control.sublime-package"
     url: "{{ package_control_url }}"
 
-- name: Install Sublime text config files
-  copy:
+- name: Symlink config files
+  file:
     src: "{{ item }}"
-    dest: "{{ config_dir }}"
-    mode: 0644
-    owner: "{{ ansible_user_id }}"
-    group: staff
+    dest: "{{ config_dir }}/{{ item | basename }}"
+    state: link
   with_fileglob:
-    - ../files/sublime-text/*
+    - "~/.config/sublime-text/*"

@@ -1,0 +1,12 @@
+---
+
+- name: Create kitty config dir.
+  file:
+    path: $HOME/Library/Preferences/kitty
+    state: directory
+
+- name: Symlink kitty.conf
+  file:
+    src: $HOME/.config/kitty/kitty.conf
+    dest: $HOME/Library/Preferences/kitty/kitty.conf
+    state: link

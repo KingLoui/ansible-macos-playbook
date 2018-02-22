@@ -1,0 +1,8 @@
+---
+
+- name: Fix issue that macvim does not open windows.
+  osx_defaults:
+    domain: org.vim.MacVim
+    key: MMLoginShell
+    type: bool
+    value: false

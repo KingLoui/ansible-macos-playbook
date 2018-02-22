@@ -33,6 +33,9 @@
     - import_tasks: tasks/iterm2.yml
       tags: [config, iterm2]
 
+    - import_tasks: tasks/kitty.yml
+      tags: [config, kitty]
+
     - import_tasks: tasks/sublime-text.yml
       tags: [config, sublime-text]
 
@@ -40,4 +43,7 @@
       tags: [config, services]
 
     - import_tasks: tasks/vim.yml
+      tags: [config, vim]
+
+    - import_tasks: tasks/macvim.yml
       tags: [config, vim]
