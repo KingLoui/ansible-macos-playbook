@@ -95,7 +95,16 @@ ansible-playbook main.yml -i inventory -K --tags "dotfiles,homebrew"
 
 ## TODO
 
-..
+#### Alfred
+- http://www.packal.org/workflow/lastpass-cli-workflow-alfred
+- http://www.packal.org/theme/neon-dreams
+- http://www.packal.org/workflow/transmit
+- https://www.alfredforum.com/topic/840-evernote-9-beta-2-for-alfred-3-search-create-append-set-reminders-all-within-alfred/
+- https://github.com/robb/Fantastical-Alfred-Workflow
+- http://jonohunt.tumblr.com/post/85815752538/alfred-workflow-to-add-tasks-to-remindersapp
+- http://www.packal.org/workflow/github-repos
+- https://github.com/willfarrell/alfred-encode-decode-workflow
+- http://www.packal.org/workflow/whats-my-ip
 
 ## Acknowledgements
 
