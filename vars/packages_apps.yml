@@ -65,9 +65,12 @@ homebrew_installed_packages:
 
   # More terminal tools.
   - antigen                   # zsh framework
+  - htop                      # activity monitor
+  - { name: https://raw.githubusercontent.com/jeffkowalski/geeknote/master/geeknote.rb, install_options: "HEAD"}
   - git-standup               # recall what you did on the last working day
   - httpie                    # cli http client
   - iperf                     # bandwidth benchmarking
+  - lastpass-cli
   - lynx                      # browser
   - nmap                      # network mapper
   - neofetch                  # system info
@@ -89,7 +92,7 @@ homebrew_installed_packages:
   - node
   - go
   - { name: php71, install_options: "with-pear,without-fpm" }
-  - python3
+  - python
   - ruby
   - elm
   - r
@@ -140,8 +143,8 @@ homebrew_installed_packages:
   - webp
 
 homebrew_services:
-  - khd                    # hotkey daemon
-  - chunkwm                # tiling window manager
+  - khd                        # hotkey daemon
+  - chunkwm                    # tiling window manager
 
 composer_packages:
   - name: hirak/prestissimo    # parallel composer downloads
@@ -159,6 +162,7 @@ npm_packages:
   - name: svgo                 # svg minifier
   - name: jsonlint             # vim linter for json
   - name: markdownlint-cli     # vim linter for markdown
+  - name: neovim               # npm provider for neovim
   - name: eslint               # vim linter for javascript
   - name: pure                 # pure promt theme for zsh
   - name: eslint-plugin-import # dependency of global eslint
@@ -192,8 +196,10 @@ pip_packages:
 ##
 
 homebrew_cask_apps:
+  - alfred
   - clipy
   - dash
+  - deluge
   - docker
   - evernote
   - firefox-nightly
@@ -206,9 +212,10 @@ homebrew_cask_apps:
   - java
   - kitty
   - macdown
-  - macvim
+  #- macvim
   - mailbutler
   - plexamp
+  - plex-media-player
   - rambox
   - resilio-sync
   - sequel-pro
@@ -218,6 +225,7 @@ homebrew_cask_apps:
   - tower
   # - teamviewer -> needs gui to install
   - vagrant
+  - vimr
   #- virtualbox -> Buggy installer because of KEXT
 
   # Fonts
@@ -234,6 +242,8 @@ homebrew_cask_apps:
   - font-awesome-terminal-fonts
   - font-meslo-nerd-font
   - font-hack-nerd-font
+  - font-firacode-nerd-font
+  - font-firacode-nerd-font-mono
 
   # Quick Look plugins
   - qlcolorcode            # syntax highlighting
