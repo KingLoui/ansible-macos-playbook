@@ -1,0 +1,8 @@
+---
+
+
+- name: Symlink vimr plist
+  file:
+    src: $HOME/.config/vimr/com.qvacua.VimR.plist
+    dest: $HOME/Library/Preferences/com.qvacua.VimR.plist
+    state: link
