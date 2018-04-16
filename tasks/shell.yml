@@ -11,8 +11,11 @@
     dest: '/etc/shells'
     line: "/usr/local/bin/zsh"
 
-- name: Set ZSH as shell for {{ ansible_user_id }}.
+- set_fact:
+    local_user: "{{ ansible_env.SUDO_USER | default(ansible_env.USER, true) | default(ansible_user_id, true) }}"
+
+- name: Set ZSH as shell for {{ local_user }}.
   become: yes
   user:
-    name: "{{ ansible_user_id }}"
+    name: "{{ local_user }}"
     shell: /usr/local/bin/zsh
