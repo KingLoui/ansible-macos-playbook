@@ -7,8 +7,8 @@
   with_items:
    - composer
    - node
-   - python
-   - python3
+   - python@2
+   - python #python3
    - ruby
 
 - name: Install global Composer packages.
@@ -46,3 +46,4 @@
     user_install: no
     executable: "{{ item.executable | default(omit) }}"
   with_items: "{{ gem_packages }}"
+  become: yes

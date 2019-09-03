@@ -63,15 +63,15 @@ system:
     # MacDown
     - { extension: md, handler: com.uranusjr.macdown }
     # Sublime Text
-    - { extension: cfg, handler: com.sublimetext.3 }
-    - { extension: css, handler: com.sublimetext.3 }
-    - { extension: inc, handler: com.sublimetext.3 }
-    - { extension: js, handler: com.sublimetext.3 }
-    - { extension: json, handler: com.sublimetext.3 }
-    - { extension: php, handler: com.sublimetext.3 }
-    - { extension: scss, handler: com.sublimetext.3 }
-    - { extension: txt, handler: com.sublimetext.3 }
-    - { extension: yml, handler: com.sublimetext.3 }
+    - { extension: cfg, handler: com.microsoft.VSCode }
+    - { extension: css, handler: com.microsoft.VSCode }
+    - { extension: inc, handler: com.microsoft.VSCode }
+    - { extension: js, handler: com.microsoft.VSCode }
+    - { extension: json, handler: com.microsoft.VSCode }
+    - { extension: php, handler: com.microsoft.VSCode }
+    - { extension: scss, handler: com.microsoft.VSCode }
+    - { extension: txt, handler: com.microsoft.VSCode }
+    - { extension: yml, handler: com.microsoft.VSCode }
 
 finder:
   new_window_target: "PfHm"
@@ -110,6 +110,7 @@ finder:
 
 
 dock:
+  apps_remove_undefined: true
   tile_size: 50
   show_idicator_lights: yes
   hidden_items_translucent: yes
@@ -121,38 +122,34 @@ dock:
       path: /Applications/Reeder.app
     - name: Safari
       path: /Applications/Safari.app
-    - name: iTunes
-      path: /Applications/iTunes.app
+    - name: Musik
+      path: /System/Applications/Music.app
     - name: Mail
-      path: /Applications/Mail.app   
+      path: /System/Applications/Mail.app   
     - name: Erinnerungen
-      path: /Applications/Reminders.app
-    - name: iStudiez Pro
-      path: /Applications/iStudiez Pro.app
+      path: /System/Applications/Reminders.app
     - name: Fantastical 2
-      path: /Applications/Fantastical 2.app
+      path: '/Applications/Fantastical 2.app'
     - name: Evernote
       path: /Applications/Evernote.app
-    - name: Rambox
-      path: /Applications/Rambox.app
+    - name: Franz
+      path: /Applications/Franz.app
     - name: Nachrichten
-      path: /Applications/Messages.app
+      path: /System/Applications/Messages.app
     - name: iTerm
       path: /Applications/iTerm.app
     - name: Tower
-      path: /Applications/Tower.app
-    - name: Sublime Text
-      path: /Applications/Sublime Text.app
+      path: /Applications/Tower.app  
+    - name: Visual Studio Code
+      path: '/Applications/Visual Studio Code.app'
     - name: Transmit
       path: /Applications/Transmit.app
-    - name: Mathematica
-      path: /Applications/Mathematica.app
     - name: Parallels Desktop
-      path: /Applications/Parallels Desktop.app
+      path: '/Applications/Parallels Desktop.app'
     - name: Remote Desktop
-      path: /Applications/Microsoft Remote Desktop.app 
+      path: '/Applications/Microsoft Remote Desktop.app' 
   spacers:
-    - after: iTunes
+    - after: Musik
     - after: Nachrichten
 
 

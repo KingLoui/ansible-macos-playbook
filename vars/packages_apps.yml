@@ -2,14 +2,11 @@
 
 homebrew_taps:
   - homebrew/core
-  - homebrew/php
   - homebrew/services
-  - homebrew/versions
   - caskroom/cask
   - caskroom/fonts
   - caskroom/versions
-  - crisidev/homebrew-chunkwm # chunkwm
-  - koekeishiya/formulae      # chunkwm, khd
+  - koekeishiya/formulae      # yabai, skhd
 
 ##
 ## PACKAGES
@@ -22,19 +19,19 @@ homebrew_installed_packages:
   - coreutils
   - binutils
   - diffutils
-  - { name: ed, install_options: "default-names" }
-  - { name: findutils, install_options: "with-default-names" }
+  - ed
+  - findutils
   - gawk
-  - { name: gnu-indent, install_options: "with-default-names" }
-  - { name: gnu-sed, install_options: "with-default-names" }
-  - { name: gnu-tar, install_options: "with-default-names" }
-  - { name: gnu-which, install_options: "with-default-names" }
+  - gnu-indent
+  - gnu-sed
+  - gnu-tar
+  - gnu-which
   - gnutls
-  - { name: grep, install_options: "with-default-names" }
+  - grep
   - gzip
   - screen
   - watch
-  - { name: wdiff, install_options: "with-gettext" }
+  - wdiff
   - wget
   # Update GNU pre-installed packages.
   - bash
@@ -47,7 +44,7 @@ homebrew_installed_packages:
   - nano
 
   # Update non-GNU pre-installed packages.
-  - { name: curl, install_options: "with-nghttp2" }
+  - curl
   - file-formula
   - git
   - openssh
@@ -66,11 +63,9 @@ homebrew_installed_packages:
   # More terminal tools.
   - antigen                   # zsh framework
   - htop                      # activity monitor
-  - { name: https://raw.githubusercontent.com/jeffkowalski/geeknote/master/geeknote.rb, install_options: "HEAD"}
   - git-standup               # recall what you did on the last working day
   - httpie                    # cli http client
   - iperf                     # bandwidth benchmarking
-  - lastpass-cli
   - lynx                      # browser
   - nmap                      # network mapper
   - neofetch                  # system info
@@ -78,7 +73,6 @@ homebrew_installed_packages:
   - p7zip                     # 7 zip
   - pigz                      # parallel gzip
   - pv                        # pipe viewer
-  - { name: weechat, install_options: "with-perl,with-python,with-lua" }
   - wrk                       # http benchmarking
   - zopfli                    # zopfli compression
   - ack                       # faster search
@@ -91,31 +85,34 @@ homebrew_installed_packages:
   - lua
   - node
   - go
-  - { name: php71, install_options: "with-pear,without-fpm" }
+  - php
   - python
+  - python@2  
   - ruby
   - elm
   - r
+
+  # Databases
+  - postgresql
 
   # Libraries
   - luajit                    # required by vim
 
   # Essential development tools/libraries.
-  - { name: chunkwm, install_options: "with-purify"} # tiling window manager
+  - yabai                     # tiling window manager
   - exa                       # ls replacement
   - fasd                      # autojump
   - fzf                       # fuzzy finder
-  - khd                       # hotkey daemon
+  - skhd                       # hotkey daemon
   - massren                   # mass renaming in vim
   - mosh                      # mobile shell
   - rename                    # regex rename
   - ssh-copy-id               # send public key to remote
   - tree                      # recursive directory listing
-  - { name: vim, install_options: "with-luajit,without-ruby,with-override-system-vi" }
+  - vim
   - neovim                    # the new vim
   - doxygen
   - hub
-  - heroku
   - sqlite
   - mcrypt
   - nvm
@@ -133,8 +130,6 @@ homebrew_installed_packages:
 
   # Image/Video tools
   - exiv2
-  #- name: ffmpeg
-  #  install_options: "with-fdk-aac,with-ffplay,with-freetype,with-libass,with-libquvi,with-libvorbis,with-libvpx,with-opus,with-x265,with-theora"
   - gifsicle
   - { name: imagemagick, install_options: "with-webp" }
   - mozjpeg
@@ -143,13 +138,13 @@ homebrew_installed_packages:
   - webp
 
 homebrew_services:
-  - khd                        # hotkey daemon
-  - chunkwm                    # tiling window manager
+  - skhd                        # hotkey daemon
+  - yabai                       # tiling window manager
 
 composer_packages:
   - name: hirak/prestissimo    # parallel composer downloads
   - name: wp-cli/wp-cli        # wp cli tool
-  - name: asm89/twig-lint      # vim linter for twig
+#err  - name: asm89/twig-lint      # vim linter for twig
   - name: squizlabs/php_codesniffer
 
 npm_packages:
@@ -183,7 +178,6 @@ pip_packages:
   - name: ansible-lint                 # vim linter for ansible
   - name: yamllint                     # vim linter for bash
   - name: proselint                    # vim linter for text
-  - { name: CodeIntel, executable: pip3, extra_args: --pre --upgrade }            # codeintel for sublime
   # to be tested ..
   - { name: virtualenv, executable: pip2 } # python2 provider for virtualenv
   - { name: virtualenv, executable: pip3 } # python3 provider for virtualenv
@@ -203,26 +197,21 @@ homebrew_cask_apps:
   - docker
   - evernote
   - firefox-nightly
-  - fliqlo
+#  - fliqlo
   - google-chrome
   - hyper
   - iina
-  - eclipse-ide
-  - iterm2-beta
+  - iterm2
   - java
-  - kitty
   - macdown
-  #- macvim
   - mailbutler
   - plexamp
   - plex-media-player
-  - rambox
-  - resilio-sync
+  - franz
+  - syncthing
   - sequel-pro
   - spotify
   - skype
-  - sublime-text
-  - tower
   # - teamviewer -> needs gui to install
   - vagrant
   - vimr
@@ -260,9 +249,7 @@ homebrew_cask_apps:
 
 mas_upgrade_all_apps: yes
 mas_installed_apps:
-  - { name: iStudiezPro, id: 402989379 }
   - { name: Keynote, id: 409183694 }
-  - { name: LastPass, id: 926036361 }
   - { name: MSRemoteDesktop, id: 715768417 }
   - { name: Numbers, id: 409203825 }
   - { name: Pages, id: 409201541 }
